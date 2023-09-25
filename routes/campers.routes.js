@@ -4,7 +4,7 @@ const router = express.Router();
 const bases = process.env.DBBD;
 require('dotenv').config();
 
-router.get('/campers', async (req, res) => {
+router.get('/todos_los_campers', async (req, res) => {
         try {
             const client = new MongoClient(bases, { useNewUrlParser: true, useUnifiedTopology: true });
             await client.connect();

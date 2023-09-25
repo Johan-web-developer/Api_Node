@@ -2,6 +2,7 @@
 const express = require('express');
 const router = express.Router();
 const routeCampers = require('../routes/campers.routes')
+const routeTrainers = require('../routes/trainers.routes');
 
 class Server {
     constructor() {
@@ -17,6 +18,7 @@ class Server {
     }
     routes() {
         this.app.use('/api/', routeCampers);
+        this.app.use('/api/trainers', routeTrainers);
 
     }
     listen() {
