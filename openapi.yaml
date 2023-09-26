@@ -1,0 +1,290 @@
+openapi: 3.0.3
+info:
+  title: API CampusLands
+  description: |-
+    La API CampusLands desarrollada en Node.js y MongoDB proporciona un conjunto de endpoints para gestionar la información de estudiantes y entrenadores de un bootcamp llamado 'Campus'. Permite realizar operaciones como la obtención de todos los estudiantes, la adición de nuevos estudiantes, la actualización de información de un estudiante por su ID, y la eliminación de un estudiante por su ID. Además, ofrece funcionalidades similares para los entrenadores del bootcamp.
+
+    Esta API proporciona una interfaz para interactuar con la base de datos MongoDB que almacena la información detallada de los campers y trainers, facilitando así la gestión y consulta de estos datos.
+  version: 1.0.0
+servers:
+  - url: http://localhost:4000/api
+tags:
+  - name: campers
+    description: Operaciones relacionadas con campers
+  - name: trainers
+    description: Operaciones relacionadas con entrenadores
+paths:
+  /campers:
+    get:
+      tags:
+        - campers
+      summary: Obtener todos los campers
+      operationId: getCampers
+      responses:
+        '200':
+          description: Lista de campers obtenida correctamente
+          content:
+            application/json:
+              schema:
+                type: array
+                items:
+                  $ref: '#/components/schemas/Camper'
+    post:
+      tags:
+        - campers
+      summary: Agregar un nuevo camper
+      operationId: addCamper
+      requestBody:
+        description: Nuevo camper que se va a agregar
+        required: true
+        content:
+          application/json:
+            schema:
+              $ref: '#/components/schemas/CamperInput'
+      responses:
+        '200':
+          description: Camper agregado correctamente
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/Camper'
+  /campers/{camperId}:
+    get:
+      tags:
+        - campers
+      summary: Obtener un camper por ID
+      operationId: getCamperById
+      parameters:
+        - name: camperId
+          in: path
+          description: ID del camper a obtener
+          required: true
+          schema:
+            type: string
+            format: uuid
+      responses:
+        '200':
+          description: Camper obtenido correctamente
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/Camper'
+        '404':
+          description: No se encontró el camper con el ID proporcionado
+    put:
+      tags:
+        - campers
+      summary: Actualizar un camper por ID
+      operationId: updateCamper
+      parameters:
+        - name: camperId
+          in: path
+          description: ID del camper a actualizar
+          required: true
+          schema:
+            type: string
+            format: uuid
+      requestBody:
+        description: Datos actualizados del camper
+        required: true
+        content:
+          application/json:
+            schema:
+              $ref: '#/components/schemas/CamperInput'
+      responses:
+        '200':
+          description: Camper actualizado correctamente
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/Camper'
+        '404':
+          description: No se encontró el camper con el ID proporcionado
+    delete:
+      tags:
+        - campers
+      summary: Eliminar un camper por ID
+      operationId: deleteCamper
+      parameters:
+        - name: camperId
+          in: path
+          description: ID del camper a eliminar
+          required: true
+          schema:
+            type: string
+            format: uuid
+      responses:
+        '200':
+          description: Camper eliminado correctamente
+        '404':
+          description: No se encontró el camper con el ID proporcionado
+  /trainers:
+    get:
+      tags:
+        - trainers
+      summary: Obtener todos los entrenadores
+      operationId: getTrainers
+      responses:
+        '200':
+          description: Lista de entrenadores obtenida correctamente
+          content:
+            application/json:
+              schema:
+                type: array
+                items:
+                  $ref: '#/components/schemas/Trainer'
+    post:
+      tags:
+        - trainers
+      summary: Agregar un nuevo entrenador
+      operationId: addTrainer
+      requestBody:
+        description: Nuevo entrenador que se va a agregar
+        required: true
+        content:
+          application/json:
+            schema:
+              $ref: '#/components/schemas/TrainerInput'
+      responses:
+        '200':
+          description: Entrenador agregado correctamente
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/Trainer'
+  /trainers/{trainerId}:
+    get:
+      tags:
+        - trainers
+      summary: Obtener un entrenador por ID
+      operationId: getTrainerById
+      parameters:
+        - name: trainerId
+          in: path
+          description: ID del entrenador a obtener
+          required: true
+          schema:
+            type: string
+            format: uuid
+      responses:
+        '200':
+          description: Entrenador obtenido correctamente
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/Trainer'
+        '404':
+          description: No se encontró el entrenador con el ID proporcionado
+    put:
+      tags:
+        - trainers
+      summary: Actualizar un entrenador por ID
+      operationId: updateTrainer
+      parameters:
+        - name: trainerId
+          in: path
+          description: ID del entrenador a actualizar
+          required: true
+          schema:
+            type: string
+            format: uuid
+      requestBody:
+        description: Datos actualizados del entrenador
+        required: true
+        content:
+          application/json:
+            schema:
+              $ref: '#/components/schemas/TrainerInput'
+      responses:
+        '201':
+          description: Entrenador actualizado correctamente
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/Trainer'
+        '505':
+          description: No se encontró el entrenador con el ID proporcionado
+    delete:
+      tags:
+        - trainers
+      summary: Eliminar un entrenador por ID
+      operationId: deleteTrainer
+      parameters:
+        - name: trainerId
+          in: path
+          description: ID del entrenador a eliminar
+          required: true
+          schema:
+            type: string
+            format: uuid
+      responses:
+        '201':
+          description: Entrenador eliminado correctamente
+        '404':
+          description: No se encontró el entrenador con el ID proporcionado
+components:
+  schemas:
+    Camper:
+      type: object
+      properties:
+        id:
+          type: string
+          format: uuid
+          example: d290f1ee-6c54-4b01-90e6-d701748f0851
+        firstName:
+          type: string
+          example: John
+        lastName:
+          type: string
+          example: Doe
+        email:
+          type: string
+          example: john.doe@example.com
+      xml:
+        name: camper
+    CamperInput:
+      type: object
+      properties:
+        firstName:
+          type: string
+          example: John
+        lastName:
+          type: string
+          example: Doe
+        email:
+          type: string
+          example: john.doe@example.com
+      xml:
+        name: camperInput
+    Trainer:
+      type: object
+      properties:
+        id:
+          type: string
+          format: uuid
+          example: d290f1ee-6c54-4b01-90e6-d701748f0852
+        firstName:
+          type: string
+          example: Jane
+        lastName:
+          type: string
+          example: Doe
+        email:
+          type: string
+          example: jane.doe@example.com
+      xml:
+        name: trainer
+    TrainerInput:
+      type: object
+      properties:
+        firstName:
+          type: string
+          example: Jane
+        lastName:
+          type: string
+          example: Doe
+        email:
+          type: string
+          example: jane.doe@example.com
+      xml:
+        name: trainerInput
