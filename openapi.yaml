@@ -2,8 +2,10 @@ openapi: 3.0.3
 info:
   title: API CampusLands
   description: |-
+   <img src="https://i.pinimg.com/564x/cd/75/9a/cd759aff6b14c4baa1fd706aaf06dd74.jpg" width="500px" height="500px" alt="Logo de mi API" />
+   
     La API CampusLands desarrollada en Node.js y MongoDB proporciona un conjunto de endpoints para gestionar la información de estudiantes y entrenadores de un bootcamp llamado 'Campus'. Permite realizar operaciones como la obtención de todos los estudiantes, la adición de nuevos estudiantes, la actualización de información de un estudiante por su ID, y la eliminación de un estudiante por su ID. Además, ofrece funcionalidades similares para los entrenadores del bootcamp.
-
+    
     Esta API proporciona una interfaz para interactuar con la base de datos MongoDB que almacena la información detallada de los campers y trainers, facilitando así la gestión y consulta de estos datos.
   version: 1.0.0
 servers:
