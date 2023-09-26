@@ -19,6 +19,25 @@ router.get('/todos_los_campers', async (req, res) => {
         }
     });
 
+router.get('/camper_ID/:id', async (req, res) => {
+      const camperId = req.params.id;
+      const client = new MongoClient(bases, { useNewUrlParser: true, useUnifiedTopology: true });
+      await client.connect();
+      const db = client.db('Artemis');
+      try {
+          const collection = db.collection('campers');
+          const camper = await collection.findOne({ _id: ObjectId(camperId) });
+  
+          if (camper) {
+              res.json(camper);
+          } else {
+              res.status(404).json({ message: 'No se encontró el camper con el ID proporcionado' });
+          }
+      } catch (error) {
+          res.status(500).json({ message: 'Error al obtener el camper', error: error.message });
+      }
+  });
+  
 router.post('/anadir_camper', async (req, res) => {
         const client = new MongoClient(bases, { useNewUrlParser: true, useUnifiedTopology: true });
         await client.connect();
