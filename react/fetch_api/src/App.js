@@ -1,4 +1,5 @@
 import React, { useState, useEffect } from 'react';
+import Button from '@mui/material/Button';
 import './App.css'
 
 const TuComponente = () => {
@@ -36,12 +37,14 @@ const TuComponente = () => {
             <th>Detalle</th>
             <th>Dirección</th>
             <th>Celular</th>
+            <th>Actualizar Camper</th>
+            <th>Eliminar Camper</th>
           </tr>
         </thead>
         <tbody>
           {campers.map(camper => (
             <tr key={camper._id}>
-              <td><img src={`./assets/${camper.imagen}`}></img></td>
+              <td><img src={`/assets/${camper.imagen}`}></img></td>
               <td>{camper.id}</td>
               <td>{camper.nombre}</td>
               <td>{camper.edad}</td>
@@ -53,6 +56,12 @@ const TuComponente = () => {
               <td>{camper.detalle}</td>
               <td>{camper.direccion}</td>
               <td>{camper.celular}</td>
+              <td>
+                 <Button variant="contained" color="primary">Actualizar</Button>
+              </td>
+              <td>
+                <Button variant="contained" color="warning">Eliminar</Button>
+                </td>
             </tr>
           ))}
         </tbody>
