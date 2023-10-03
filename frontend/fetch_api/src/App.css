@@ -1,7 +1,8 @@
 /* Estilos para la tabla */
 table {
   border-collapse: collapse;
-  width: 100%;
+  width: 80%;
+  margin-left: 4em;
 }
 
 th, td {
@@ -19,6 +20,32 @@ button {
   margin: 4px; /* Ajusta el espacio entre los botones */
 }
 
+
+.navbar {
+  background-color: #2f7df1;
+  padding: 1rem;
+}
+
+.navbar-list {
+  list-style-type: none;
+  margin: 0;
+  padding: 0;
+}
+
+.navbar-item {
+  display: inline-block;
+  margin-right: 1rem;
+}
+
+.navbar-link {
+  color: #fff;
+  text-decoration: none;
+  font-size: 1.2rem;
+}
+
+.navbar-link:hover {
+  color: #ddd;
+}
 
 @media (max-width: 767px) {
   table {
