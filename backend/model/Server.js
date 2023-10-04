@@ -2,6 +2,7 @@
 const express = require('express');
 const cors = require('cors');
 const router = express.Router();
+const bodyParser = require('body-parser');
 const routeCampers = require('../routes/campers.routes')
 const routeTrainers = require('../routes/trainers.routes');
 const routeEquipos = require('../routes/equipos_computo.routes');
@@ -25,10 +26,11 @@ class Server {
             res.setHeader('Access-Control-Allow-Headers', 'Content-Type, Authorization');
             next();
           });
+        this.app.use(bodyParser.json());
     }
 
     routes() {
-        this.app.use('/api/', routeCampers);
+        this.app.use('/api/campers', routeCampers);
         this.app.use('/api/trainers', routeTrainers);
         this.app.use('/api/equipo_computo', routeEquipos);
         this.app.use('/api/salones/', routeSalones);

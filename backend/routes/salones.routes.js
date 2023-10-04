@@ -15,19 +15,17 @@ router.get('/obtain_salones', async (req, res) => {
   });
 
 router.post('/anadir_salon', async (req, res) => {
+  try {
     const client = new MongoClient(bases);
     await client.connect();
     const db = client.db('Artemis');
     const collection = db.collection('salones');
     const newSalon = req.body;
-  
     const result = await collection.insertOne(newSalon);
-  
-    if (result.insertedCount === 1) {
-      res.json({ message: 'Salón añadido con éxito' });
-    } else {
-      res.status(500).json({ message: 'Error al añadir el salón' });
-    }
+    res.json(result);
+  } catch (error) {
+    res.status(500).json({ message: 'Error al procesar la solicitud' });
+  }  
   });
 
 router.put('/actualizar_salon/:id', async (req, res) => {
