@@ -4,6 +4,9 @@ const cors = require('cors');
 const router = express.Router();
 const routeCampers = require('../routes/campers.routes')
 const routeTrainers = require('../routes/trainers.routes');
+const routeEquipos = require('../routes/equipos_computo.routes');
+const routeSalones = require('../routes/salones.routes');
+const routeJornadas = require('../routes/jornadas.routes')
 
 class Server {
     constructor() {
@@ -27,6 +30,9 @@ class Server {
     routes() {
         this.app.use('/api/', routeCampers);
         this.app.use('/api/trainers', routeTrainers);
+        this.app.use('/api/equipo_computo', routeEquipos);
+        this.app.use('/api/salones/', routeSalones);
+        this.app.use('/api/jornadas/', routeJornadas)
 
     }
     listen() {
