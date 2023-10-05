@@ -17,18 +17,18 @@ const Header = () => {
         <div className="topbar" id="top">
             <div className="header6">
                 <Container className="po-relative">
-                    <Navbar className="navbar-expand-lg h6-nav-bar">
-                        <NavbarBrand className='subtitle font-bold text-primary display-5'> CampusLands 👩‍🚀 </NavbarBrand>
+                    <Navbar className="navbar-expand-lg h2-nav-bar">
+                        <NavbarBrand className='subtitle font-bold text-success display-5'> CampusLands  👩‍🚀 </NavbarBrand>
                         <NavbarToggler onClick={toggle}><span className="ti-menu"></span></NavbarToggler>
                         <Collapse isOpen={isOpen} navbar className="hover-dropdown font-14 justify-content-end" id="h6-info">
                             <Nav navbar className="ms-auto">
                                 <NavItem>
-                                    <Link className="nav-link text-white" to={"/"}>
+                                    <Link className="nav-link text-white" to={"/#"}>
                                         Campers
                                     </Link>
                                 </NavItem>
                                 <NavItem>
-                                    <Link className="nav-link text-white" to={"/custom-components"}>
+                                    <Link className="nav-link text-white" to={"/#"}>
                                         Trainers
                                     </Link>
                                 </NavItem>

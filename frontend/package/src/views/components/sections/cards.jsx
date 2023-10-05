@@ -1,6 +1,6 @@
 import React, { useState, useEffect } from 'react';
 import { Card, CardTitle, CardText, Row, Col, Container } from 'reactstrap';
-
+import angela from "../../../assets/images/campers/angela.jpg"
 
 const Cards = () => {
     const [campers, setCampers] = useState([]);
@@ -18,7 +18,8 @@ const Cards = () => {
   
       obtenerCampers();
     }, []);
-  
+
+   
     return (
         <div>
             <div className="spacer" id="card-component"></div>
@@ -26,10 +27,10 @@ const Cards = () => {
                 <Row>
                 {campers.map((campers, index) => (
                     <Col md="6" key={index}>
-                        <Card body className="card-shadow m-b-3">
-                            <img src={campers.imagen} alt={`Camper`} className="img-responsive" />
-                            <CardTitle>{campers.nombre}</CardTitle>
-                            <CardText>
+                        <Card  className="font-bold  ui-card">
+                            <img src={angela} alt={`Camper`} width={350} height={250} className="img-fluid rounded mx-auto d-block top" />
+                            <CardTitle className='description'>{campers.nombre}</CardTitle>
+                            <CardText className='description'>
                                 Edad: {campers.edad} <br />
                                 Especialidad: {campers.especialidad}
                             </CardText>
