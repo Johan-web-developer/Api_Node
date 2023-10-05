@@ -1,14 +1,14 @@
 import React, { useState, useEffect } from 'react';
 import { Card, CardTitle, CardText, Row, Col, Container } from 'reactstrap';
 
-const Cards = () => {
+const Trainers = () => {
     const [campers, setCampers] = useState([]);
     const [images, setImages] = useState({});
 
     useEffect(() => {
-        const obtenerCampers = async () => {
+        const obtenerTrainers = async () => {
             try {
-                const response = await fetch('http://localhost:4000/api/campers/todos_los_campers');
+                const response = await fetch('http://localhost:4000/api/trainers/todos_los_trainers');
                 const data = await response.json();
                 setCampers(data);
 
@@ -32,7 +32,7 @@ const Cards = () => {
             }
         };
 
-        obtenerCampers();
+        obtenerTrainers();
     }, []);
 
     return (
@@ -61,4 +61,4 @@ const Cards = () => {
     );
 }
 
-export default Cards;
+export default Trainers;

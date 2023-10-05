@@ -7,8 +7,8 @@ const HeaderBanner2 = () => {
         <div className="static-slider-head banner2">
             <Container>
                 <Row className="justify-content-center">
-                    <Col lg="10" md="6" className="align-self-center text-center">
-                        <h2 className="fade-in-out  subtitle font-bold text-white display-5">Conoce a nuestro Campers <br/> <br/> y Trainers.</h2>
+                    <Col lg="10" md="6" className="align-self-center text-center typewriter-container">
+                        <h2 className="typewriter-text  subtitle font-bold text-white display-5">Conoce a nuestro Campers <br/> <br /> y <br />  <br/>  Trainers.</h2>
                     </Col>
                 </Row>
             </Container>

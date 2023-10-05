@@ -2,7 +2,8 @@
 import React, { useState } from 'react';
 import { HashLink as Link } from 'react-router-hash-link';
 import { Container, NavbarBrand, Navbar, Nav, NavItem, NavbarToggler, Collapse } from 'reactstrap';
-
+import Trainers from '../../views/components/sections/trainers';
+import { BrowserRouter as Router, Route} from 'react-router-dom';
 
 const Header = () => {
     const [isOpen, setIsOpen] = useState(false);
@@ -28,9 +29,9 @@ const Header = () => {
                                     </Link>
                                 </NavItem>
                                 <NavItem>
-                                    <Link className="nav-link text-white" to={"/#"}>
-                                        Trainers
-                                    </Link>
+                                    <Router>
+                                            <Route path="../sections/trainers.jsx" component={Trainers} />
+                                    </Router>
                                 </NavItem>
                             </Nav>
                         </Collapse>

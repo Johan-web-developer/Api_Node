@@ -8,8 +8,8 @@ import Footer from "../../components/footer/footer.jsx";
 
 // sections for this page
 import Cards from "./sections/cards.jsx";
-import CallToAction from "../../components/call-to-action/CallToAction"
-
+import CallToAction from "../../components/call-to-action/CallToAction";
+import Trainers from "./sections/trainers.jsx";
 
 const Components = () => {
     return (
@@ -20,6 +20,7 @@ const Components = () => {
                     <HeaderBanner />
                     <Cards />
                     <CallToAction />
+                    <Trainers /> 
                 </div>
             </div>
             <Footer />
