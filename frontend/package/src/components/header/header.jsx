@@ -3,7 +3,6 @@ import React, { useState } from 'react';
 import { HashLink as Link } from 'react-router-hash-link';
 import { Container, NavbarBrand, Navbar, Nav, NavItem, NavbarToggler, Collapse } from 'reactstrap';
 
-import logo from '../../assets/images/logos/logo.png';
 
 const Header = () => {
     const [isOpen, setIsOpen] = useState(false);
@@ -19,24 +18,21 @@ const Header = () => {
             <div className="header6">
                 <Container className="po-relative">
                     <Navbar className="navbar-expand-lg h6-nav-bar">
-                        <NavbarBrand href="/"><img src={logo} alt="wrapkit" width={50}/></NavbarBrand>
+                        <NavbarBrand className='subtitle font-bold text-primary display-5'> CampusLands 👩‍🚀 </NavbarBrand>
                         <NavbarToggler onClick={toggle}><span className="ti-menu"></span></NavbarToggler>
                         <Collapse isOpen={isOpen} navbar className="hover-dropdown font-14 justify-content-end" id="h6-info">
                             <Nav navbar className="ms-auto">
                                 <NavItem>
-                                    <Link className="nav-link" to={"/"}>
-                                        Components
+                                    <Link className="nav-link text-white" to={"/"}>
+                                        Campers
                                     </Link>
                                 </NavItem>
                                 <NavItem>
-                                    <Link className="nav-link" to={"/custom-components"}>
-                                        Custom-Components
+                                    <Link className="nav-link text-white" to={"/custom-components"}>
+                                        Trainers
                                     </Link>
                                 </NavItem>
                             </Nav>
-                            <div className="act-buttons">
-                                <Link to="/#coming" className="btn btn-success-gradiant font-14">Upgrade To Pro</Link>
-                            </div>
                         </Collapse>
                     </Navbar>
                 </Container>

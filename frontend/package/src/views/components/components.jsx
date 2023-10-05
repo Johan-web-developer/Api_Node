@@ -7,11 +7,7 @@ import HeaderBanner from "../../components/banner/banner.jsx";
 import Footer from "../../components/footer/footer.jsx";
 
 // sections for this page
-import Labels from "./sections/labels.jsx";
-import Images from "./sections/images.jsx";
 import Cards from "./sections/cards.jsx";
-import Typography from "./sections/typography.jsx";
-import JsComponents from "./sections/js-components.jsx";
 import CallToAction from "../../components/call-to-action/CallToAction"
 
 
@@ -23,10 +19,6 @@ const Components = () => {
                 <div className="container-fluid">
                     <HeaderBanner />
                     <Cards />
-                    <Labels/>
-                    <Images />  
-                    <Typography />
-                    <JsComponents />
                     <CallToAction />
                 </div>
             </div>
