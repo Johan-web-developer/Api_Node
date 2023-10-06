@@ -38,6 +38,7 @@ const Trainers = () => {
     return (
         <div>
             <div className="spacer" id="card-component"></div>
+            <CardTitle className='text-center text-black h1'>Trainers</CardTitle>
             <Container>
                 <Row className="m-t-40 justify-content-center">
                     {trainers.map((trainer, index) => {

@@ -4,7 +4,7 @@ import { Container, Row, Col } from 'reactstrap';
 
 const Footer = () => {
     return (
-        <div className="footer4 b-t spacer">
+        <div className="footer4 b-t ">
             <Container>
                 <Row>
                     <Col lg="3" md="6" className="m-b-30">

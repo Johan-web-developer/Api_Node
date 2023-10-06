@@ -9,26 +9,23 @@ const Header = () => {
 
     const toggle = () => setIsOpen(!isOpen);
 
-    /*--------------------------------------------------------------------------------*/
-    /*To open NAVBAR in MOBILE VIEW                                                   */
-    /*--------------------------------------------------------------------------------*/
 
     return (
         <div className="topbar" id="top">
             <div className="header6">
                 <Container className="po-relative">
                     <Navbar className="navbar-expand-lg h2-nav-bar">
-                        <NavbarBrand className='subtitle font-bold text-gray display-5'> CampusLands  👩‍🚀 </NavbarBrand>
+                        <NavbarBrand className='subtitle font-bold text-white display-5'> CampusLands  👩‍🚀 </NavbarBrand>
                         <NavbarToggler onClick={toggle}><span className="ti-menu"></span></NavbarToggler>
                         <Collapse isOpen={isOpen} navbar className="hover-dropdown font-14 justify-content-end" id="h6-info">
                             <Nav navbar className="ms-auto">
                                 <NavItem>
-                                    <Link className="nav-link text-white" to={"/#"}>
+                                    <Link className="nav-link text-black h5" to={"/#"}>
                                         Campers
                                     </Link>
                                 </NavItem>
                                 <NavItem>
-                                <Link  className="nav-link text-white" to="/trainers">
+                                <Link  className="nav-link text-black h5" to="/trainers">
                                     Trainers
                                 </Link>
                                 </NavItem>
