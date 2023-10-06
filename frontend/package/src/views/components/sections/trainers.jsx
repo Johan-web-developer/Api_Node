@@ -2,7 +2,7 @@ import React, { useState, useEffect } from 'react';
 import { Card, CardTitle, CardText, Row, Col, Container } from 'reactstrap';
 
 const Trainers = () => {
-    const [campers, setCampers] = useState([]);
+    const [trainers, setCampers] = useState([]);
     const [images, setImages] = useState({});
 
     useEffect(() => {
@@ -40,16 +40,16 @@ const Trainers = () => {
             <div className="spacer" id="card-component"></div>
             <Container>
                 <Row>
-                    {campers.map((camper, index) => {
-                        const image = images[camper.imagen];
+                    {trainers.map((trainer, index) => {
+                        const image = images[trainer.imagen];
                         return (
                             <Col md="6" key={index}>
                                 <Card className="font-bold ui-card">
-                                    <img className="card-img" src={image} alt={`Camper`} width={280} height={250}/>
-                                    <CardTitle className='description'>{camper.nombre}</CardTitle>
+                                    <img className="card-img" src={image} alt={`trainer`} width={280} height={250}/>
+                                    <CardTitle className='description'>{trainer.nombre}</CardTitle>
                                     <CardText className='description'>
-                                        Edad: {camper.edad} <br />
-                                        Especialidad: {camper.especialidad}
+                                        Experiencia: {trainer.experiencia} <br />
+                                        Tecnologia: {trainer.tecnologia}
                                     </CardText>
                                 </Card>
                             </Col>
