@@ -39,15 +39,15 @@ const Cards = () => {
         <div>
             <div className="spacer" id="card-component"></div>
             <Container>
-                <Row>
+                <Row className="m-t-40 justify-content-center">
                     {campers.map((camper, index) => {
                         const image = images[camper.imagen];
                         return (
                             <Col md="6" key={index}>
-                                <Card className="font-bold ui-card">
+                                <Card>
                                     <img className="card-img" src={image} alt={`Camper`} width={280} height={250}/>
-                                    <CardTitle className='description'>{camper.nombre}</CardTitle>
-                                    <CardText className='description'>
+                                    <CardTitle lassName="m-t-20">{camper.nombre}</CardTitle>
+                                    <CardText lassName="m-t-20">
                                         Edad: {camper.edad} <br />
                                         Especialidad: {camper.especialidad}
                                     </CardText>

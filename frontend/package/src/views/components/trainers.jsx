@@ -10,7 +10,7 @@ import Footer from "../../components/footer/footer.jsx";
 import CallToAction from "../../components/call-to-action/CallToAction";
 import Trainers from "./sections/trainers.jsx";
 
-const Components = () => {
+const DataTrainers = () => {
     return (
         <div id="main-wrapper">
             <Header />
@@ -26,8 +26,8 @@ const Components = () => {
     );
 }
 
-Components.propTypes = {
+DataTrainers.propTypes = {
     classes: PropTypes.object
 };
 
-export default Components;
+export default DataTrainers;

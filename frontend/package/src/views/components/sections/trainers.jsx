@@ -1,5 +1,5 @@
 import React, { useState, useEffect } from 'react';
-import { Card, CardTitle, CardText, Row, Col, Container } from 'reactstrap';
+import { Card, CardTitle,  Row, Col, Container } from 'reactstrap';
 
 const Trainers = () => {
     const [trainers, setCampers] = useState([]);
@@ -39,26 +39,28 @@ const Trainers = () => {
         <div>
             <div className="spacer" id="card-component"></div>
             <Container>
-                <Row>
+                <Row className="m-t-40 justify-content-center">
                     {trainers.map((trainer, index) => {
-                        const image = images[trainer.imagen];
-                        return (
-                            <Col md="6" key={index}>
-                                <Card className="font-bold ui-card">
-                                    <img className="card-img" src={image} alt={`trainer`} width={280} height={250}/>
-                                    <CardTitle className='description'>{trainer.nombre}</CardTitle>
-                                    <CardText className='description'>
-                                        Experiencia: {trainer.experiencia} <br />
-                                        Tecnologia: {trainer.tecnologia}
-                                    </CardText>
-                                </Card>
-                            </Col>
-                        );
+                    const image = images[trainer.imagen];
+                    return (
+                        <Col key={index} lg="4" md="6">      
+                        <Card>
+                            <img className="img-fluid" src={image} width="500px" height="450px" alt="Camper" />
+                            <h5 className="font-medium m-t-30">{trainer.nombre}</h5>
+                            <CardTitle className="m-t-20">{trainer.especialidad}</CardTitle>
+                            <CardTitle className="m-t-20">{trainer.tecnologia}</CardTitle>
+                            <a href="#" className="linking text-themecolor m-t-10">Eliminar<i className="ti-arrow-right"></i></a>
+                        </Card>
+                        </Col>
+                    );
                     })}
                 </Row>
             </Container>
+
         </div>
     );
 }
+
+
 
 export default Trainers;

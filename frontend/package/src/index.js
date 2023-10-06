@@ -8,6 +8,8 @@ import {
   HashRouter
 } from "react-router-dom";
 import Components from "./views/components/components.jsx";
+import DataTrainers from "./views/components/trainers.jsx";
+
 
 
 const root = ReactDOM.createRoot(document.getElementById('root'));
@@ -16,6 +18,7 @@ var hist = createBrowserHistory();
 root.render(
   <HashRouter history={hist}>
     <Routes>
+      <Route path="/trainers" element={<DataTrainers />} />
       <Route path="/" element={<Components />} />
     </Routes>
   </HashRouter>

@@ -28,7 +28,7 @@ const Header = () => {
                                     </Link>
                                 </NavItem>
                                 <NavItem>
-                                <Link className="nav-link text-white" to="../../views/components/trainers.jsx">
+                                <Link  className="nav-link text-white" to="/trainers">
                                     Trainers
                                 </Link>
                                 </NavItem>

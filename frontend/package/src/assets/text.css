@@ -11,10 +11,8 @@
   }
   
   .typewriter-text {
-	display: inline-block;
-	font-size: 50px; /* Ajusta el tamaño del texto según sea necesario */
-	white-space: nowrap;
-	overflow: hidden;
+	font-size: 50px;
+	margin-top: 1em;
   }
   
   .typewriter-container {
@@ -32,7 +30,7 @@
 	gap: 2em;
 	overflow: hidden;
 	transition: all 0.3s ease-out;
-	background: radial-gradient(#176dee 50%, #000 100%);
+	background: radial-gradient(#b3d633 50%, #000 100%);
 	padding: 20px;
 	width: 450px; 
   	height: 450px;
