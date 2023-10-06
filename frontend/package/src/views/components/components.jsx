@@ -16,7 +16,7 @@ const Components = () => {
         <div id="main-wrapper">
             <Header />
             <div className="page-wrapper">
-                <div className="container-fluid">
+                <div className="">
                     <HeaderBanner />
                     <Cards />
                     <CallToAction />

@@ -22,93 +22,67 @@
 	position: relative;
   }
     
-  .ui-card {
-	display: flex;
-	flex-wrap: wrap;
-	justify-content: space-between;
-	max-width: 650px;
-	gap: 2em;
-	overflow: hidden;
-	transition: all 0.3s ease-out;
-	background: radial-gradient(#b3d633 50%, #000 100%);
+.card {
+	border: 1px solid #ccc;
+	border-radius: 8px;
+	box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+	margin-bottom: 20px;
+	transition: box-shadow 0.3s;
+  }
+  
+  .card:hover {
+	box-shadow: 0 8px 16px rgba(0, 0, 0, 0.2);
+  }
+  
+  .card-img {
+	border-top-left-radius: 8px;
+	border-top-right-radius: 8px;
+	height: 450px;
+	object-fit: cover;
+  }
+  
+  .card-title {
+	font-size: 1.25rem;
+	font-weight: bold;
+	margin-top: 10px;
+  }
+  
+  .card-text {
+	font-size: 1rem;
+	color: #555;
+  }
+  
+  /* Estilos para el contenedor principal */
+  .container {
 	padding: 20px;
-	width: 450px; 
-  	height: 450px;
   }
   
-.card-img{
-	max-width: 100%; /* Asegura que la imagen no supere el ancho de la tarjeta */
-	transition: all 0.3s ease-out;
-	max-width: 100%; /* Asegura que la imagen no supere el ancho de la tarjeta */
-	max-height: 100%; /* Limita la altura de la imagen */
-	object-fit: scale-down; /* Escala la imagen para llenar el contenedor sin deformarla */		
+  /* Espaciado entre las tarjetas */
+  .m-t-40 {
+	margin-top: 40px;
   }
   
-  .ui-card:hover img {
-	transform: scale(0.9) translateY(-20px);
-	opacity: 0.7;
+  /* Estilo para el spacer */
+  .spacer {
+	height: 40px; /* Ajusta la altura según tus preferencias */
   }
   
-  .ui-card .description {
-	display: flex;
-	flex-direction: column; /* Alinea el contenido verticalmente */
-	justify-content: flex-start; /* Alinea la descripción en la parte inferior */
-	text-align: center;
-	color: #ffffff;
-	font-size: 18px;
-	gap: 1em;
-  }
-  
-  .ui-card .description h3 {
-	text-align: center;
-	font-weight: 700;
-	font-size: 32px;
-	margin: 0 0 20px;
-	transform: translateY(30px);
-	opacity: 0;
-	transition: all 0.3s ease-out;
-	margin-top: 2em;
-  }
-  
-  .ui-card .description p {
-	transform: translateY(30px);
-	opacity: 0;
-	transition: all 0.3s ease-out 0.2s;
+  /* Alineación del texto en las tarjetas */
+  .text-center {
 	text-align: center;
   }
   
-  .ui-card .description a {
-	color: #fff;
-	background: #34aff3;
-	display: inline-block;
-	padding: 10px 25px;
-	border-radius: 5px;
+  /* Estilo para el enlace en el spacer */
+  #card-component a {
+	color: #007bff; /* Cambia el color del enlace según tus preferencias */
 	text-decoration: none;
-	transform: translateY(30px);
-	opacity: 0;
-	transition: all 0.3s ease-out 0.4s;
+	font-weight: bold;
   }
   
-  .ui-card .description a:hover {
-	background: #21aaf3;
+  #card-component a:hover {
+	text-decoration: underline;
   }
   
-  .ui-card:hover .description h3 {
-	opacity: 1;
-	transform: translateY(0px);
-  }
-  
-  .ui-card:hover .description p {
-	opacity: 1;
-	transform: translateY(0px);
-  }
-  
-  .ui-card:hover .description a {
-	opacity: 1;
-	transform: translateY(0px);
-  }
-  
-
 .top{
   margin-top: 2em;
 }

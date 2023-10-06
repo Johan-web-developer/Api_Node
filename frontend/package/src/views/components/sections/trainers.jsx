@@ -49,14 +49,12 @@ const Trainers = () => {
                             <h5 className="font-medium m-t-30">{trainer.nombre}</h5>
                             <CardTitle className="m-t-20">{trainer.especialidad}</CardTitle>
                             <CardTitle className="m-t-20">{trainer.tecnologia}</CardTitle>
-                            <a href="#" className="linking text-themecolor m-t-10">Eliminar<i className="ti-arrow-right"></i></a>
                         </Card>
                         </Col>
                     );
                     })}
                 </Row>
             </Container>
-
         </div>
     );
 }

@@ -1,5 +1,6 @@
 import React, { useState, useEffect } from 'react';
 import { Card, CardTitle, CardText, Row, Col, Container } from 'reactstrap';
+import '../../../assets/text.css'
 
 const Cards = () => {
     const [campers, setCampers] = useState([]);
@@ -37,28 +38,29 @@ const Cards = () => {
 
     return (
         <div>
-            <div className="spacer" id="card-component"></div>
-            <Container>
-                <Row className="m-t-40 justify-content-center">
-                    {campers.map((camper, index) => {
-                        const image = images[camper.imagen];
-                        return (
-                            <Col md="6" key={index}>
-                                <Card>
-                                    <img className="card-img" src={image} alt={`Camper`} width={280} height={250}/>
-                                    <CardTitle lassName="m-t-20">{camper.nombre}</CardTitle>
-                                    <CardText lassName="m-t-20">
-                                        Edad: {camper.edad} <br />
-                                        Especialidad: {camper.especialidad}
-                                    </CardText>
-                                </Card>
-                            </Col>
-                        );
-                    })}
-                </Row>
-            </Container>
+          <div className="spacer" id="card-component"></div>
+          <CardTitle className='font-black text-center' >Campers</CardTitle>
+          <Container>
+            <Row className="m-t-40 justify-content-center">
+              {campers.map((camper, index) => {
+                const image = images[camper.imagen];
+                return (
+                  <Col md="6" key={index}>
+                    <Card>
+                      <img className="card-img" src={image} alt={`Camper`}/>
+                      <CardTitle className="m-t-20 text-center">{camper.nombre}</CardTitle>
+                      <CardText className="m-t-20 text-center">
+                        Edad: {camper.edad} <br />
+                        Especialidad: {camper.especialidad}
+                      </CardText>
+                    </Card>
+                  </Col>
+                );
+              })}
+            </Row>
+          </Container>
         </div>
-    );
+      );    
 }
 
 export default Cards;
